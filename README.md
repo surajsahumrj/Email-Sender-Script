@@ -78,12 +78,6 @@ This tool is a fun, voice-based utility. Do not use it for sensitive information
 
 ---
 
-## 🧑‍💻 Author
-
-Made with 💙 by [Your Name]
-
----
-
 ## 📜 License
 
 This project is licensed under the MIT License.
