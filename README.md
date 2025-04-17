@@ -1,49 +1,89 @@
-# Email Sender Script
+# Voice-Controlled Email Sender 🗣️📧
 
-This repository contains a Python script for sending emails using the `smtplib` module.
+This Python project lets you **send emails using your voice**! It uses **speech recognition** to take the recipient's name and message, and **text-to-speech** to respond during the interaction.
 
-## Features
-- **Send Emails via SMTP**: Connects to an SMTP server to send emails.
-- **Customizable Email Details**: Set sender, recipient, subject, and content.
-- **Secure Connection**: Uses TLS encryption for secure email transmission.
+## 🔧 Features
 
-## Prerequisites
-- Python 3.x
-- A Gmail account (or another SMTP-compatible email service)
+- 🎤 Voice input for both recipient and message
+- 🔊 Spoken feedback using text-to-speech
+- 📧 Email sending via Gmail SMTP
+- 📚 Custom contact mapping
 
-## Installation
-1. Clone the repository:
-   ```sh
-   git clone <repository-url>
-   cd <repository-folder>
-   ```
-2. No additional dependencies are required beyond Python's built-in libraries.
+---
 
-## Usage
-1. Modify the script to include your email credentials:
+## 🚀 Getting Started
+
+### 📦 Requirements
+
+Make sure you have the following Python libraries installed:
+
+```bash
+pip install speechrecognition pyttsx3 pyaudio
+```
+
+> ⚠️ `PyAudio` might require additional setup depending on your OS. On Windows, try:
+> ```bash
+> pip install pipwin
+> pipwin install pyaudio
+> ```
+
+---
+
+## ✨ Usage
+
+1. **Clone this repo** or download the script.
+
+2. **Update email credentials** in the `send_email()` function:
    ```python
-   email['from'] = 'Your Name'   # Enter your name
-   email['to'] = 'recipient@gmail.com' # Enter recipient's email
-   email['subject'] = 'Your Subject' # Enter email subject
+   sender_email = "youremail@gmail.com"
+   sender_password = "yourapppassword"
+   ```
+   > 💡 Use an [App Password](https://support.google.com/accounts/answer/185833?hl=en) instead of your actual password for Gmail accounts.
 
-   email.set_content('Your email message')
-
-   smtp.login('your-email@gmail.com', 'your-password') # Enter your email and password
-   ```
-2. Run the script:
-   ```sh
-   python email_sender.py
-   ```
-3. If successful, the script will print:
-   ```
-   all good mah boi!
+3. **Edit contact mappings** in the `emails` dictionary:
+   ```python
+   emails = {
+       "myself": "yourfriend@gmail.com"
+   }
    ```
 
-## Notes
-- **Security Warning**: Hardcoding your email and password is not recommended. Use environment variables or a secure authentication method.
-- **App Passwords**: If using Gmail, enable "Less Secure Apps" or generate an App Password for authentication.
-- **SMTP Configuration**: The script is set up for Gmail (`smtp.gmail.com`, port `587`). Modify for other email providers if needed.
+4. **Run the script:**
+   ```bash
+   python voice_email_sender.py
+   ```
 
-## License
+---
+
+## 🧠 How It Works
+
+1. The program asks who you want to email.
+2. It listens to your voice and maps the name to an email.
+3. It then asks for the message.
+4. Once the message is captured, it sends the email and confirms the action.
+
+---
+
+## 🛡️ Disclaimer
+
+This tool is a fun, voice-based utility. Do not use it for sensitive information or spam. Email credentials are stored in plain text—use responsibly.
+
+---
+
+## 📌 To Do
+
+- [ ] Add email subject line support
+- [ ] Confirm message before sending
+- [ ] Store contacts in a separate JSON file
+- [ ] Add GUI interface
+
+---
+
+## 🧑‍💻 Author
+
+Made with 💙 by [Your Name]
+
+---
+
+## 📜 License
+
 This project is licensed under the MIT License.
-
